@@ -1,15 +1,26 @@
-print("Bem vindo ao jogo palavra secreta")
+print("Bem vindo ao jogo palavra secreta\n")
+correta = ["p", "e", "d", "r", "o"]
+errada = ["#", "#", "#", "#", "#"]
 
-import os
-palavra_secreta = ''
-letra_escrita = ''
-letras_certas = ''  
-numero_tentativas = 0
+def jogo():
 
-while True:
-    letra_escrita = input("Digite uma letra")
-    if len(letra_escrita)>1:
-        print("Digite apenas uma letra")
-    continue
- 
-        
+    for j in range(10):
+
+        letter = input("Digite uma letra:")
+
+        for i in range(len(correta)):
+            if letter == correta[i]:
+                errada[i] = correta[i]
+
+                print(errada)
+
+
+    if errada == correta:
+        print(correta)                
+        print("Parabens você ganhou o jogo")
+    
+    else:
+        print("Você so tinha 10 tentativas tente novamente!!")
+        jogo()
+
+jogo()    
